@@ -7,11 +7,15 @@ import {NgSemanticModule} from 'ng-semantic';
 
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    SideMenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
