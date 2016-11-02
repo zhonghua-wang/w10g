@@ -1,9 +1,11 @@
-<sm-menu title="Angular2" class="inverted teal" logo="./favicon.ico">
-  <a sm-item *ngFor="let item of items" [icon]="item.icon">{{item?.title}}</a>
-
+<sm-menu class="inverted teal">
+  <!--<a sm-item *ngFor="let item of items" [icon]="item.icon">{{item?.title}}</a>-->
+  <a sm-item routerLink="/" routerLinkActive="active" icon="home">Home</a>
+  <a sm-item routerLink="/learn-ng2" routerLinkActive="active" icon="blind">Learn NG2</a>
+  <a sm-item routerLink="/about" routerLinkActive="active" icon="tree">About</a>
   <sm-menu class="menu right secondary">
     <a sm-item href="#/elements/menu"
-       image="http://semantic-ui.com/images/avatar/small/stevie.jpg">Elliot Fu</a>
+       image="http://semantic-ui.com/images/avatar/small/stevie.jpg">w10g</a>
     <a sm-item icon="sidebar big"></a>
   </sm-menu>
 </sm-menu>
