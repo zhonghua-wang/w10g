@@ -1,11 +1,12 @@
-<sm-menu class="inverted teal">
-  <!--<a sm-item *ngFor="let item of items" [icon]="item.icon">{{item?.title}}</a>-->
-  <a sm-item routerLink="/" routerLinkActive="active" icon="home">Home</a>
-  <a sm-item routerLink="/learn-ng2" routerLinkActive="active" icon="blind">Learn NG2</a>
-  <a sm-item routerLink="/about" routerLinkActive="active" icon="tree">About</a>
-  <sm-menu class="menu right secondary">
-    <a sm-item href="#/elements/menu"
-       image="http://semantic-ui.com/images/avatar/small/stevie.jpg">w10g</a>
-    <a sm-item icon="sidebar big"></a>
-  </sm-menu>
-</sm-menu>
+<md-toolbar color="primary">
+  <md-list-item>
+    <!--<a md-button routerLink="/" routerLinkActive="active">Home</a>-->
+    <!--<a md-button routerLink="/learn-ng2" routerLinkActive="active">Learn NG2</a>-->
+    <!--<a md-button routerLink="/about" routerLinkActive="active">About</a>-->
+    <a md-button *ngFor="let item of menu" routerLink={{item.path}} routerLinkActive="active"> {{item.title}} </a>
+
+  </md-list-item>
+
+
+</md-toolbar>
+

@@ -1,9 +1,12 @@
+import './rxjs-extension'
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule} from '@angular/router';
-import {NgSemanticModule} from 'ng-semantic';
+
+import {MaterialModule} from '@angular/material';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
@@ -13,6 +16,12 @@ import { LearnNg2Component } from './learn-ng2/learn-ng2.component';
 import { AboutComponent } from './about/about.component';
 import { ErrorComponent } from './error/error.component';
 import { HomeComponent } from './home/home.component';
+import { AttributeDirectiveComponent } from './learn-ng2/attribute-directive/attribute-directive.component';
+import { HighlightDirective } from './learn-ng2/attribute-directive/highlight.directive';
+import { MenuComponent } from './menu/menu.component';
+import {MenuService} from './menu/menu.service';
+import {InMemoryDataService} from "./in-memory-data.service";
+import {routing} from './app.routing';
 
 @NgModule({
   declarations: [
@@ -23,21 +32,20 @@ import { HomeComponent } from './home/home.component';
     LearnNg2Component,
     AboutComponent,
     ErrorComponent,
-    HomeComponent
+    HomeComponent,
+    AttributeDirectiveComponent,
+    HighlightDirective,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {path: 'learn-ng2', component: LearnNg2Component },
-      {path: 'about',component: AboutComponent},
-      {path: '', component: HomeComponent},
-      {path: '**', component: ErrorComponent}
-    ]),
-    NgSemanticModule
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    MaterialModule.forRoot(),
+    routing
   ],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
