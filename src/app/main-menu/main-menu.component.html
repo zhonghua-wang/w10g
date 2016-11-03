@@ -1,12 +1,41 @@
-<md-toolbar color="primary">
-  <md-list-item>
-    <!--<a md-button routerLink="/" routerLinkActive="active">Home</a>-->
-    <!--<a md-button routerLink="/learn-ng2" routerLinkActive="active">Learn NG2</a>-->
-    <!--<a md-button routerLink="/about" routerLinkActive="active">About</a>-->
-    <a md-button *ngFor="let item of menu" routerLink={{item.path}} routerLinkActive="active"> {{item.title}} </a>
+<div class="slds-context-bar">
+  <div class="slds-context-bar__primary slds-context-bar__item--divider-right">
+    <div
+      class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger--click slds-no-hover">
+      <div class="slds-context-bar__icon-action">
+        <a href="javascript:void(0);" class="slds-icon-waffle_container slds-context-bar__button">
+          <div class="slds-icon-waffle">
+            <div class="slds-r1"></div>
+            <div class="slds-r2"></div>
+            <div class="slds-r3"></div>
+            <div class="slds-r4"></div>
+            <div class="slds-r5"></div>
+            <div class="slds-r6"></div>
+            <div class="slds-r7"></div>
+            <div class="slds-r8"></div>
+            <div class="slds-r9"></div>
+          </div>
+          <span class="slds-assistive-text">Open App Launcher</span>
+        </a>
+      </div>
+      <span class="slds-context-bar__label-action slds-context-bar__app-name">
+        <span class="slds-truncate">w10g</span>
+      </span>
+    </div>
+  </div>
+  <nav class="slds-context-bar__secondary" role="navigation">
+    <ul class="slds-grid">
+      <li class="slds-context-bar__item" *ngFor="let item of menu">
+        <a routerLink={{item.path}} routerLinkActive="active" class="slds-context-bar__label-action" title="{{item.title}}">
+          <span class="slds-truncate">{{item.title}}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
 
-  </md-list-item>
+<!--<div class="slds-button-group slds-m-top&#45;&#45;xx-large" role="group">-->
+<!--<ngl-pill *ngFor="let item of menu" routerLink={{item.path}} routerLinkActive="active"> {{item.title}} </ngl-pill>-->
+<!--</div>-->
 
-
-</md-toolbar>
 
