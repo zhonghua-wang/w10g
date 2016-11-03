@@ -20,12 +20,12 @@ export class MenuService {
       .catch(this.handleError);
   }
 
-  // getChildren(parent: Menu): Promise<Menu[]>{
-  //   return this.http.get(this.menuUrl)
-  //     .toPromise()
-  //     .then(response => response.json().data as Menu[])
-  //     .catch(this.handleError)
-  // }
+  getChildren(parent: Menu): Promise<Menu[]>{
+    return this.http.get(this.menuUrl)
+      .toPromise()
+      .then(response => response.json().data as Menu[])
+      .catch(this.handleError)
+  }
 
   private handleError(error: any): Promise<any> {
     console.error('An Error Occurred', error);

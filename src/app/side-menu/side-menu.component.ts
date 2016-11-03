@@ -9,11 +9,12 @@ import {Menu, MenuService} from '../menu';
 export class SideMenuComponent implements OnInit {
 
   error: any;
+  menuList: Menu[];
 
-  // constructor(
-  //   private menuList: Menu[],
-  //   private menuService: MenuService
-  // ) {};
+  // TODO add private menu cause error.
+  constructor(
+    private menuService: MenuService
+  ) {};
 
   // set menuList(mlist) {
   //   this._menuList = mlist;
@@ -23,11 +24,11 @@ export class SideMenuComponent implements OnInit {
   //   return this._menuList;
   // }
 
-  // subMenu(parent: Menu): void{
-  //   this.menuService.getChildren(parent)
-  //     .then(menu => this._menuList = menu)
-  //     .catch(error => this.error = error);
-  // }
+  subMenu(parent: Menu): void{
+    this.menuService.getChildren(parent)
+      .then(menu => this.menuList = menu)
+      .catch(error => this.error = error);
+  }
 
   ngOnInit() {
   }
