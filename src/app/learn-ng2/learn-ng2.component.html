@@ -1,4 +1,16 @@
-<app-side-menu></app-side-menu>
-<p>
-  learn-ng2 works!
-</p>
+<!--TODO used side-menu-component-->
+<div class="ui vertical menu">
+  <a class="item" routerLink="communication">
+    <h4 class="ui header">Communication</h4>
+    <p>Component communication</p>
+  </a>
+  <a class="item">
+    <h4 class="ui header">Coupons</h4>
+    <p>Check out our collection of coupons</p>
+  </a>
+  <a class="item">
+    <h4 class="ui header">Rebates</h4>
+    <p>Visit our rebate forum for information on claiming rebates</p>
+  </a>
+</div>
+<router-outlet></router-outlet>

@@ -21,7 +21,8 @@ import {MenuComponent} from './menu/menu.component';
 import {MenuService} from './menu/menu.service';
 import {InMemoryDataService} from "./in-memory-data.service";
 import {routing} from './app.routing';
-import {NglModule} from 'ng-lightning/ng-lightning';
+import {NgSemanticModule} from 'ng-semantic';
+import { ComponentCommunicationComponent } from './learn-ng2/component-communication/component-communication.component';
 
 @NgModule({
   declarations: [
@@ -35,18 +36,16 @@ import {NglModule} from 'ng-lightning/ng-lightning';
     HomeComponent,
     AttributeDirectiveComponent,
     HighlightDirective,
-    MenuComponent
+    MenuComponent,
+    ComponentCommunicationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    routing,
-    NglModule.forRoot({
-        svgPath: '../node_modules/@salesforce-ux/design-system/assets/icons'
-      }
-    )
+    NgSemanticModule,
+    routing
   ],
   providers: [MenuService],
   bootstrap: [AppComponent]
